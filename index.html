@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de Texto</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <img class="imagen__logo" src="img/icono-alura.png" alt="Logo">
+        <h1>Encriptador y Desencriptador de Texto</h1>
+    </header>
+    <main>
+        <section class="Panel">
+           
+            <div class="Panel__encriptar">
+                <div class="Panel__encriptar__interno">
+                    
+                    <textarea id="textoentrada" class="Panel__encriptar__textarea" 
+                              oninput="validar_texto(this);" 
+                              placeholder="Ingrese el texto aquí"></textarea>
+                  
+                    <span class="Panel__encriptar__instruccion">
+                        <span style="font-size:1.875rem;">&#128712;</span> 
+                        Solo letras minúsculas y sin acentos. No se aceptan mayúsculas ni caracteres especiales.
+                    </span>
+                   
+                    <div class="Panel__encriptar__botones">
+                        <button class="botones__acciones" onclick="procesar_Peticion('encriptar');" id="encriptar">Encriptar</button>
+                        <button class="botones__acciones" onclick="procesar_Peticion('desencriptar');" id="desencriptar">Desencriptar</button>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="Panel__respuesta">
+                <div class="Panel__respuesta__interior" id="sinrespuesta">
+                    <img src="img/munheco.png" id="imagenrespuesta" alt="Muñeco">
+                    <h2 class="Panel__respuesta__interior__titulo">Ningún mensaje fue encontrado</h2>
+                    <p class="Panel__respuesta__interior__parrafo">Ingresa el texto que desees encriptar o desencriptar.</p>                   
+                </div>
+                <div class="Panel__respuesta__interior" id="respuestatexto" style="display: none;">
+                    <textarea class="Panel__encriptar__textarea" id="textosalida" disabled></textarea>
+                    
+                    <button class="botones__acciones" onclick="copiar_Texto();" id="copiar">Copiar</button>                
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Challenge Alura - Oracle ONE | Elaborado por Ronald David Becerra grupo 7 &copy; 2024</p>
+    </footer>
+   
+    <script src="encriptador.js"></script>
+</body>
+</html>
